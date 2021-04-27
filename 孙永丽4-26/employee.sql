@@ -31,6 +31,20 @@ CREATE TABLE `department` (
 
 insert  into `department`(`id`,`Dname`,`userid`) values (1,'开发部',2),(2,'后勤部',10),(3,'开发部',3),(4,'安保部',4),(5,'运营部',11),(6,'客服部',12),(7,'运营部',8),(8,'开发部',7),(9,'客服部',9),(10,'系统管理',1);
 
+/*Table structure for table `flowers` */
+
+DROP TABLE IF EXISTS `flowers`;
+
+CREATE TABLE `flowers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `flowername` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `flowers` */
+
+insert  into `flowers`(`id`,`flowername`) values (1,'棉花'),(2,'梅花'),(3,'迎春'),(4,'琼花'),(5,'海棠'),(6,'风信子'),(7,'金鱼草'),(8,'仙客来'),(9,'锦带花'),(10,'报春花');
+
 /*Table structure for table `ls_menu` */
 
 DROP TABLE IF EXISTS `ls_menu`;
@@ -45,7 +59,7 @@ CREATE TABLE `ls_menu` (
   `isdelete` int(11) unsigned DEFAULT NULL,
   `url` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `ls_menu` */
 

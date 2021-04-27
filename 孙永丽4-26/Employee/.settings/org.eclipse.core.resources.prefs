@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/cn/hfxt/dao/BaseDao.java=UTF-8
+encoding//src/cn/hfxt/dao/MenuDao.java=UTF-8
+encoding//src/cn/hfxt/dao/impl/MenuDaoImpl.java=UTF-8
+encoding//src/cn/hfxt/service/MenuService.java=UTF-8
+encoding//src/cn/hfxt/service/impl/MenuServiceImpl.java=UTF-8
+encoding//src/cn/hfxt/servlet/AbstractServlet.java=UTF-8
+encoding//src/cn/hfxt/utils/ConfigManager.java=UTF-8
+encoding//src/cn/hfxt/utils/DataBaseUtil.java=UTF-8

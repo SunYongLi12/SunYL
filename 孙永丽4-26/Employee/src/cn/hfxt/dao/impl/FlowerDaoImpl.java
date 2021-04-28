@@ -47,14 +47,18 @@ public class FlowerDaoImpl extends BaseDao implements FlowerDao{
 
 	@Override
 	public int addFlowers(Flowers flower) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql="INSERT INTO flowers(flowername) VALUES(? )";
+		Object[] parms={flower.getFlowerName()};
+		int num=this.excuteUpdate(sql,parms);
+		return num;
 	}
 
 	@Override
 	public int deleFlowers(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "DELETE FROM `flowers` WHERE id=?";
+		Object[] parms = { id };
+		int num = super.excuteUpdate(sql, parms);
+		return num;
 	}
 
 	@Override

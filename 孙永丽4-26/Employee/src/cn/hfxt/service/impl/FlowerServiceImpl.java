@@ -29,14 +29,12 @@ public class FlowerServiceImpl implements FlowerService{
 
 	@Override
 	public int addFlowers(Flowers flower) {
-		// TODO Auto-generated method stub
-		return 0;
+		return flodao.addFlowers(flower);
 	}
 
 	@Override
 	public int deleFlowers(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		return flodao.deleFlowers(id);
 	}
 
 	@Override

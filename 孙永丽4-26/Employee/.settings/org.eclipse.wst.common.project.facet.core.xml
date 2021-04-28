@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
   <runtime name="com.genuitec.runtime.generic.jee60"/>
-  <secondary-runtime name="D-_tomcat9_apache-tomcat-9.0_apache-tomcat-9.0.41"/>
+  <secondary-runtime name="D-_tomcat_apache-tomcat-9.0.41"/>
   <fixed facet="java"/>
   <fixed facet="jst.web"/>
   <fixed facet="wst.jsdt.web"/>

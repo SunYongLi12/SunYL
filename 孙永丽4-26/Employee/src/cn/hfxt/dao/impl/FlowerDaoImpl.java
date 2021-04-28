@@ -60,8 +60,14 @@ public class FlowerDaoImpl extends BaseDao implements FlowerDao{
 	@Override
 	public int echoFlowers(int id) {
 		String sql = "SELECT * FROM `flowers` WHERE id = ?";
+		int num = 0;
+		try {
+			set = super.excuteQuery(sql, null);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
-		return 0;
+		return num;
 	}
 
 	@Override

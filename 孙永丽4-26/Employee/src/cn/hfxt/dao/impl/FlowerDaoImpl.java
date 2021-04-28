@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import cn.hfxt.dao.BaseDao;
 import cn.hfxt.dao.FlowerDao;
 import cn.hfxt.entity.Flowers;
+import cn.hfxt.entity.Menu;
 import cn.hfxt.utils.DataBaseUtil;
 
 public class FlowerDaoImpl extends BaseDao implements FlowerDao{
@@ -67,6 +68,29 @@ public class FlowerDaoImpl extends BaseDao implements FlowerDao{
 	public int updaFlowers(Flowers flower) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public List<Menu> seleFBtn(int parentid) {
+		List<Menu> list = new ArrayList<Menu>();
+		String sql = "SELECT * FROM `ls_menu` WHERE parentid = ? AND `type` = 3";
+		Object[] parms = {parentid};
+		try {
+			set = super.excuteQuery(sql, parms);
+			if(set != null) {
+				while (set.next()) {
+					Menu menu = new Menu();
+					menu.setId(set.getInt("id"));
+					menu.setMbtn(set.getString("mbtn"));
+					list.add(menu);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		} finally {
+			DataBaseUtil.closeAll(set, null, null);
+		}
+		return list;
 	}
 
 }

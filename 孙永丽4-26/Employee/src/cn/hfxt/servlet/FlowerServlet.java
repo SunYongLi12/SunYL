@@ -1,12 +1,13 @@
 package cn.hfxt.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import cn.hfxt.entity.Flowers;
+import cn.hfxt.entity.Layui;
 
 public class FlowerServlet extends AbstractServlet {
 
@@ -23,11 +24,6 @@ public class FlowerServlet extends AbstractServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
-	
-	
-	
-	
-	
 	
 	
 	@Override

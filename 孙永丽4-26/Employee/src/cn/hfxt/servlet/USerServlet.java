@@ -7,11 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.hfxt.entity.Flowers;
 import cn.hfxt.entity.Layui;
 import cn.hfxt.entity.Menu;
-import cn.hfxt.entity.MenudtreeData;
 import cn.hfxt.entity.RoleType;
 import cn.hfxt.entity.User;
+import cn.hfxt.service.FlowerService;
+import cn.hfxt.service.impl.FlowerServiceImpl;
 import cn.hfxt.service.impl.MenuServiceImpl;
 import cn.hfxt.service.impl.UserServiceImpl;
 public class USerServlet extends AbstractServlet{
@@ -19,7 +21,7 @@ public class USerServlet extends AbstractServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 	}
-	
+	private FlowerService flower = new FlowerServiceImpl();
 	int num = 0;
 	
 	public int LoginUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -118,6 +120,17 @@ public class USerServlet extends AbstractServlet{
 	public Layui<RoleType> AllRoleType(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		Layui<RoleType> roletype = new MenuServiceImpl().roleType();
 		return roletype;
+	}
+	
+	public String Flower(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<Menu> seleFBtn = flower.seleFBtn(Integer.parseInt(request.getParameter("id")));
+		System.out.println("flower::"+seleFBtn.size());
+		request.setAttribute("list", seleFBtn);
+		return "RightFlower";
+	}
+	public Layui<Flowers> AllFlowers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Layui<Flowers> layui = flower.seleFlowers();
+		return layui;
 	}
 	
 	@Override

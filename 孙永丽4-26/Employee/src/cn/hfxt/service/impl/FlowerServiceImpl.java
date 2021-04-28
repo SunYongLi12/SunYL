@@ -6,6 +6,7 @@ import cn.hfxt.dao.FlowerDao;
 import cn.hfxt.dao.impl.FlowerDaoImpl;
 import cn.hfxt.entity.Flowers;
 import cn.hfxt.entity.Layui;
+import cn.hfxt.entity.Menu;
 import cn.hfxt.service.FlowerService;
 import cn.hfxt.utils.DataBaseUtil;
 
@@ -48,6 +49,11 @@ public class FlowerServiceImpl implements FlowerService{
 	public int updaFlowers(Flowers flower) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public List<Menu> seleFBtn(int parentid) {
+		return flodao.seleFBtn(parentid);
 	}
 
 }

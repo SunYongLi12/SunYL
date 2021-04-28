@@ -78,11 +78,11 @@ function upUser(userid){
 	layui.layer.open({
 		title : "修改用户信息",
 		type : 2,
-		content : "userUpdate.jsp",
+		content : "FlowerUpdate.jsp",
 		area:['400px','540px'],
 		success:function(layero, index){
 			$.ajax({
-				url:"http://localhost:8080/Employee/USerServlet?action=selectByUserid&id="+userid,
+				url:"http://localhost:8080/Employee/FlowerServlet?action=selectByUserid&id="+userid,
 				type:"post",
 				data:{"userid":userid},
 				success:function(data){

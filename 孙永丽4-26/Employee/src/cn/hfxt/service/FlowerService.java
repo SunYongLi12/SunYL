@@ -14,9 +14,13 @@ public interface FlowerService {
 	int addFlowers(Flowers flower);//新增
 	
 	int deleFlowers(int id);//删除
+<<<<<<< HEAD
 	
 	int echoFlowers(int id);//回显
 	
+=======
+	Flowers echoFlowers(int id);//回显
+>>>>>>> 7b927714ff12b788263f5fb2517cd67fa386705e
 	int updaFlowers(Flowers flower);//修改
 	
 }

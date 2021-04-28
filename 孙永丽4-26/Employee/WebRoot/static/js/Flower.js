@@ -74,28 +74,23 @@ function delFlo(userid){
 
 //修改用户
 function upUser(userid){
-	alert("userid:"+userid)
+	alert("id:"+userid)
 	layui.layer.open({
-		title : "修改用户信息",
+		title : "修改信息",
 		type : 2,
 		content : "FlowerUpdate.jsp",
-		area:['400px','540px'],
+		area:['360px','200px'],
 		success:function(layero, index){
 			$.ajax({
-				url:"http://localhost:8080/Employee/FlowerServlet?action=selectByUserid&id="+userid,
+				url:"http://localhost:8080/Employee/FlowerServlet?action=echoFlower&id="+userid,
 				type:"post",
-				data:{"userid":userid},
+				data:{"id":userid},
 				success:function(data){
 					var info = eval('(' + data + ')');
-					alert(info[0].userName)
+					alert(info.flowerName)
       				var body = layui.layer.getChildFrame('body', index);
-      				body.find("#id").val(info[0].id);
-					body.find("#usercode").val(info[0].userCode);
-					body.find("#username").val(info[0].userName);
-					body.find("#address").val(info[0].address);
-					body.find("#phone").val(info[0].phone);
-					alert(info[0].userRole);
-					body.find("#role option[value="+info[0].userRole+"]").attr("selected",true);	//菜单样式
+      				body.find("#id").val(info.id);
+					body.find("#flower").val(info.flowerName);
 					
                     //获取新窗口对象
                     var iframeWindow = layero.find('iframe')[0].contentWindow;

@@ -62,22 +62,31 @@ public class FlowerDaoImpl extends BaseDao implements FlowerDao{
 	}
 
 	@Override
-	public int echoFlowers(int id) {
+	public Flowers echoFlowers(int id) {
 		String sql = "SELECT * FROM `flowers` WHERE id = ?";
-		int num = 0;
+		Flowers flower = null;
+		Object[] parms = {id};
 		try {
-			set = super.excuteQuery(sql, null);
+			set = super.excuteQuery(sql, parms);
+			if(set != null) {
+				while (set.next()) {
+					flower = new Flowers();
+					flower.setId(set.getInt("id"));
+					flower.setFlowerName(set.getString("flowerName"));
+				}
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		
-		return num;
+		return flower;
 	}
 
 	@Override
 	public int updaFlowers(Flowers flower) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "UPDATE `flowers` SET flowername=? WHERE id=?";
+		Object[] parms = {flower.getFlowerName(),flower.getId()};
+		return super.excuteUpdate(sql, parms);
 	}
 
 	@Override

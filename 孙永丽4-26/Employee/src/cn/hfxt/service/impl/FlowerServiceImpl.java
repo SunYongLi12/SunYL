@@ -38,15 +38,15 @@ public class FlowerServiceImpl implements FlowerService{
 	}
 
 	@Override
-	public int echoFlowers(int id) {
+	public Flowers echoFlowers(int id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return flodao.echoFlowers(id);
 	}
 
 	@Override
 	public int updaFlowers(Flowers flower) {
 		// TODO Auto-generated method stub
-		return 0;
+		return flodao.updaFlowers(flower);
 	}
 
 	@Override

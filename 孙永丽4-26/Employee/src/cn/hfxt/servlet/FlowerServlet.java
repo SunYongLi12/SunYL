@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.hfxt.entity.Flowers;
 import cn.hfxt.entity.Layui;
+import cn.hfxt.service.impl.FlowerServiceImpl;
 
 public class FlowerServlet extends AbstractServlet {
 
@@ -25,7 +26,19 @@ public class FlowerServlet extends AbstractServlet {
 		doPost(request, response);
 	}
 	
+	//»ØÏÔ
+	public Flowers echoFlower(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Flowers flower = new FlowerServiceImpl().echoFlowers(Integer.parseInt(request.getParameter("id")));
+		return flower;
+	}
 	
+	//ÐÞ¸Ä
+	public int updateFlower(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Flowers flower = new Flowers();
+		flower.setId(Integer.parseInt(request.getParameter("id")));
+		flower.setFlowerName(request.getParameter("flower"));
+		return new FlowerServiceImpl().updaFlowers(flower);
+	}
 	@Override
 	public Class getServletClass() {
 		return FlowerServlet.class;
